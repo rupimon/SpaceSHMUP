@@ -56,6 +56,9 @@ public class PowerUp : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		Color test = cube.GetComponent<Renderer>().material.color;
+		test.a = 1.0f;
+		cube.GetComponent<Renderer>().material.color = test;
 		// Manually rotate the Cube child every Update()
 		// Multiplying it by Time.time causes the rotation to be time-based
 		cube.transform.rotation = Quaternion.Euler( rotPerSecond*Time.time );
